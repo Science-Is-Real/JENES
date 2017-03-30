@@ -1,2 +1,2 @@
-#this is python!!!!!!!!!!!!
-print("Hello World!")
+import tkinter
+master = tkinter.tk()
