@@ -1,3 +1,4 @@
+
 #Import Modules
 from tkinter import *
 from time import sleep
@@ -11,6 +12,8 @@ Can.pack()
 #Functions
 def moveRight(event):
     Can.move(Blob, 10, 0)
+def moveLeft(event):
+    Can.move(Blob, -10, 0)
 #Key Bindings
-master.bind("<Right>",moveRight)
-#Game Loop
+Master.bind("<Right>",moveRight)
+Master.bind("<Left>",moveLeft)
