@@ -1,28 +1,16 @@
-#modules
+#Import Modules
 from tkinter import *
-#Variables
-GameEnd = 0
-master = Tk()
-Bx = 0
-Bxa = Bx + 50
-Bxb = Bx + 75
-#tkinter Stuff
-Can = Canvas(master, width=1325, height=400)
-#Game Loop
-Can.create_rectangle(2,400,1325,385,fill="green")
-Can.create_oval(Bxa,385,Bxb,360,fill="black")
+from time import sleep
+#Declare Variables
+Master = Tk()
+#Create Canvas
+Can = Canvas(Master, width=1325, height=400)
+Blob = Can.create_oval(10,385,35,360,fill="black")
+Grass = Can.create_rectangle(2,400,1325,385,fill="green")
 Can.pack()
-while True:
-    #Functions
-    def moveleft(event):
-        print("Left")
-        global Bx
-        Bx = Bx - 100
-    def moveright(event):
-        print("Right")
-        global Bx
-        Bx = Bx + 100
-    master.bind_all('<Left>',moveleft)
-    master.bind_all('<Right>',moveright)
-    master.mainloop()
-
+#Functions
+def moveRight(event):
+    Can.move(Blob, 10, 0)
+#Key Bindings
+master.bind("<Right>",moveRight)
+#Game Loop
