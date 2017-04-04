@@ -22,11 +22,10 @@ def BioOn():
 Can = Canvas(Master, width=1325, height=400)
 #Biome
 #Cloud = Can.create_oval(70,20,110,40)
-img = PhotoImage(file="backround1.ppm")
-Background=Can.create_image(0,161, anchor=NW, image=img)
-#Grass = Can.create_rectangle(-400,400,1725,385,fill="green")
-#Biome = [Grass,Cloud]
-Blob = Can.create_oval(650,385,675,360,fill="black")
+img = PhotoImage(file="G.E.N.E.S\Savannah.gif")
+Background=Can.create_image(0,0, anchor=NW, image=img)
+blobimg = PhotoImage(file="vghvahcbkja")
+blob = Can.create_image(650,320,anchor=NW,image=blobimg)
 #Functions
 def GameOn():
     Can.pack()
