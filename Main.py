@@ -33,6 +33,11 @@ Trees = Can.create_image(0,0,anchor=NW,image=TreesImg)
 blobimg = PhotoImage(file="blobbb.gif")
 blob = Can.create_image(650,320,anchor=NW,image=blobimg)
 geneticimg = PhotoImage(file = "Genetic Shuffle anim.gif")
+#Cloud = Can.create_oval(70,20,110,40)
+img = PhotoImage(file="G.E.N.E.S\Savannah.gif")
+Background=Can.create_image(0,0, anchor=NW, image=img)
+blobimg = PhotoImage(file="vghvahcbkja")
+blob = Can.create_image(650,320,anchor=NW,image=blobimg)
 #Functions
 def GameOn():
     Can.pack()
