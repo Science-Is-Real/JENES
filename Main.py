@@ -1,6 +1,6 @@
 #Import Modules
 from tkinter import *
-from time import sleep
+import time
 #Declare Variables
 Master = Tk()
 #############
@@ -19,14 +19,20 @@ def BioOn():
 #Game Side
 ##########
 #Create Canvas
-Can = Canvas(Master, width=1325, height=400)
+Can = Canvas(Master, width=1350, height=400)
 #Biome
-#Cloud = Can.create_oval(70,20,110,40)
-img = PhotoImage(file="backround1.ppm")
-Background=Can.create_image(0,161, anchor=NW, image=img)
-#Grass = Can.create_rectangle(-400,400,1725,385,fill="green")
-#Biome = [Grass,Cloud]
-Blob = Can.create_oval(650,385,675,360,fill="black")
+SkyImg = PhotoImage(file="Sky.gif")
+Can.create_image(0,0,anchor=NW,image=SkyImg)
+CloudsImg = PhotoImage(file="clouds.gif")
+Clouds = Can.create_image(0,0,anchor=NW,image=CloudsImg)
+TreesImg = PhotoImage(file="Savannah Trees.gif")
+Trees = Can.create_image(0,0,anchor=NW,image=TreesImg)
+
+
+
+blobimg = PhotoImage(file="blobbb.gif")
+blob = Can.create_image(650,320,anchor=NW,image=blobimg)
+geneticimg = PhotoImage(file = "Genetic Shuffle anim.gif")
 #Functions
 def GameOn():
     Can.pack()
@@ -35,12 +41,19 @@ def GameOn():
     MenuG.pack_forget()
     MenuB.pack()
 def moveRight(event):
-    Can.move(Background, -10, 0)
+    Can.move(Clouds, -5, 0)
+    Can.move(Trees, -10, 0)
 def moveLeft(event):
-    Can.move(Background, 10, 0)
+    Can.move(Clouds, 5, 0)
+    Can.move(Trees, 10, 0)
+def mate(event):
+    Geneshuffle=Can.create_image(460,0,image=genticimg)
+    time.sleep(1)
+    Can.delete(Geneshuffle)
 #Key Bindings
 Master.bind("<Right>",moveRight)
 Master.bind("<Left>",moveLeft)
+Master.bind("<3>",mate)
 ##########
 #Main Menu
 ##########
