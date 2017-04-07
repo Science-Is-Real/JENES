@@ -23,21 +23,14 @@ Can = Canvas(Master, width=1350, height=400)
 #Biome
 SkyImg = PhotoImage(file="Sky.gif")
 Can.create_image(0,0,anchor=NW,image=SkyImg)
-CloudsImg = PhotoImage(file="clouds.gif")
+CloudsImg = PhotoImage(file="Clouds.gif")
 Clouds = Can.create_image(0,0,anchor=NW,image=CloudsImg)
 TreesImg = PhotoImage(file="Savannah Trees.gif")
-Trees = Can.create_image(0,0,anchor=NW,image=TreesImg)
-
-
-
-blobimg = PhotoImage(file="blobbb.gif")
-blob = Can.create_image(650,320,anchor=NW,image=blobimg)
-geneticimg = PhotoImage(file = "Genetic Shuffle anim.gif")
-#Cloud = Can.create_oval(70,20,110,40)
-img = PhotoImage(file="G.E.N.E.S\Savannah.gif")
-Background=Can.create_image(0,0, anchor=NW, image=img)
-blobimg = PhotoImage(file="vghvahcbkja")
-blob = Can.create_image(650,320,anchor=NW,image=blobimg)
+Tree1 = Can.create_image(1350,0,anchor=NW,image=TreesImg)
+Tree2 = Can.create_image(-1350,0,anchor=NW,image=TreesImg)
+Tree3 = Can.create_image(0,0,anchor=NW,image=TreesImg)
+blobimg = PhotoImage(file="Blobbb.gif")
+Blob = Can.create_image(625,325,anchor=NW,image=blobimg)
 #Functions
 def GameOn():
     Can.pack()
@@ -47,10 +40,14 @@ def GameOn():
     MenuB.pack()
 def moveRight(event):
     Can.move(Clouds, -5, 0)
-    Can.move(Trees, -10, 0)
+    Can.move(Tree1, -10, 0)
+    Can.move(Tree2, -10, 0)
+    Can.move(Tree3, -10, 0)
 def moveLeft(event):
     Can.move(Clouds, 5, 0)
-    Can.move(Trees, 10, 0)
+    Can.move(Tree1, 10, 0)
+    Can.move(Tree2, 10, 0)
+    Can.move(Tree3, 10, 0)
 def mate(event):
     Geneshuffle=Can.create_image(460,0,image=genticimg)
     time.sleep(1)
