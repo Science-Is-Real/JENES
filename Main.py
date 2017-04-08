@@ -81,14 +81,9 @@ def moveLeft(event):
         Can.move(Tree2, -1350,0)
         Can.move(Tree3, -1350,0)
         BioCount = 0
-def mate(event):
-    Geneshuffle=Can.create_image(460,0,image=genticimg)
-    time.sleep(1)
-    Can.delete(Geneshuffle)
 #Key Bindings
 Master.bind("<Right>",moveRight)
 Master.bind("<Left>",moveLeft)
-Master.bind("<3>",mate)
 ##########
 #Main Menu
 ##########
