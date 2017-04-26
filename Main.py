@@ -38,6 +38,7 @@ Tree3 = Can.create_image(0,0,anchor=NW,image=TreesImg)
 blobimg = PhotoImage(file="Blobbb.gif")
 Blob = Can.create_image(625,325,anchor=NW,image=blobimg)
 BioCount=0
+BioClount=0
 #Functions
 def GameOn():
     Can.pack()
@@ -53,12 +54,16 @@ def moveRight(event):
     Can.move(Cloud2, -5, 0)
     Can.move(Cloud3, -5, 0)
     global BioCount
+    global BioClount
+    BioClount += .5
     BioCount += 1
-    print(BioCount)
-    if BioCount == 135:
+    print(str(BioCount)+", "+str(BioClount))
+    if int(BioClount) == 135:
         Can.move(Cloud1, 1350,0)
         Can.move(Cloud2, 1350,0)
         Can.move(Cloud3, 1350,0)
+        BioClount = 0
+    if BioCount == 135:
         Can.move(Tree1, 1350,0)
         Can.move(Tree2, 1350,0)
         Can.move(Tree3, 1350,0)
@@ -71,12 +76,16 @@ def moveLeft(event):
     Can.move(Tree2, 10, 0)
     Can.move(Tree3, 10, 0)
     global BioCount
+    global BioClount
+    BioClount -= .5
     BioCount -= 1
-    print(BioCount)
-    if BioCount == -135:
+    print(str(BioCount)+", "+str(BioClount))
+    if BioClount == -135:
         Can.move(Cloud1, -1350,0)
         Can.move(Cloud2, -1350,0)
         Can.move(Cloud3, -1350,0)
+        BioClount = 0
+    if BioCount == -135:
         Can.move(Tree1, -1350,0)
         Can.move(Tree2, -1350,0)
         Can.move(Tree3, -1350,0)
